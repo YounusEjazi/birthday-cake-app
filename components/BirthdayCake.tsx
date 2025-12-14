@@ -245,8 +245,8 @@ export default function BirthdayCake() {
 
       <div className="z-10 relative flex flex-col items-center w-full max-w-4xl">
         {/* Message Area */}
-        <div className={`mb-4 h-32 transition-all duration-1000 flex flex-col items-center justify-center ${showMessage ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-           <h1 className="text-4xl md:text-6xl font-retro text-yellow-300 text-center leading-tight text-shadow-neon animate-float">
+        <div className={`mb-4 h-32 transition-all duration-1000 flex flex-col items-center justify-center relative z-30 ${showMessage ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+           <h1 className="text-4xl md:text-6xl font-retro text-yellow-300 text-center leading-tight text-shadow-neon animate-float relative z-30">
              HAPPY BIRTHDAY<br/>
              <span className="text-pink-500 mt-2 block">{name.toUpperCase()}!</span>
              <span className="text-cyan-400 text-xl md:text-2xl mt-4 block font-retro-sm opacity-80 animate-pulse">
