@@ -33,6 +33,13 @@ body {
   overflow: hidden;
   background-color: #000;
   font-family: 'Courier New', monospace;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* Animations */

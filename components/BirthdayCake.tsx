@@ -197,7 +197,8 @@ export default function BirthdayCake() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="ENTER NAME..."
-            className="w-full bg-black border-2 border-cyan-400 p-4 text-center text-xl text-cyan-400 outline-none focus:border-pink-500 focus:shadow-[0_0_15px_#ec4899] transition-all font-retro mb-8 uppercase placeholder-gray-600"
+            className="w-full bg-black border-2 border-cyan-400 p-4 text-center text-cyan-400 outline-none focus:border-pink-500 focus:shadow-[0_0_15px_#ec4899] transition-all font-retro mb-8 uppercase placeholder-gray-600"
+            style={{ fontSize: '16px' }}
             maxLength={15}
           />
 
@@ -230,9 +231,10 @@ export default function BirthdayCake() {
 
       <video
         ref={videoRef}
-        className="absolute top-4 right-4 w-32 h-24 object-cover rounded-lg border-2 border-cyan-400 opacity-40 z-0 mix-blend-screen"
+        className="absolute top-4 right-4 object-contain rounded-lg border-2 border-cyan-400 opacity-40 z-0 mix-blend-screen pointer-events-none"
         playsInline
         muted
+        style={{ width: '96px', height: '72px', touchAction: 'none' }}
       />
 
       <div className="z-10 relative flex flex-col items-center w-full max-w-4xl">
