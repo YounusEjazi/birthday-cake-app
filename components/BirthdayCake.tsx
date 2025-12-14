@@ -146,25 +146,31 @@ export default function BirthdayCake() {
     const allOut = currentCandles.every((c) => !c.lit)
     if (allOut && !allBlownOut) {
       setAllBlownOut(true)
-      // Trigger confetti
-      const duration = 3000
+      // Trigger confetti - reduced amount and duration
+      const duration = 1000
       const end = Date.now() + duration
+      let lastConfettiTime = 0
+      const confettiInterval = 200 // Fire confetti every 200ms instead of every frame
 
       const frame = () => {
-        confetti({
-          particleCount: 5,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 },
-          colors: ['#ff00de', '#00ffff', '#ffd700']
-        })
-        confetti({
-          particleCount: 5,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 },
-          colors: ['#ff00de', '#00ffff', '#ffd700']
-        })
+        const now = Date.now()
+        if (now - lastConfettiTime >= confettiInterval) {
+          confetti({
+            particleCount: 3,
+            angle: 60,
+            spread: 45,
+            origin: { x: 0 },
+            colors: ['#ff00de', '#00ffff', '#ffd700']
+          })
+          confetti({
+            particleCount: 3,
+            angle: 120,
+            spread: 45,
+            origin: { x: 1 },
+            colors: ['#ff00de', '#00ffff', '#ffd700']
+          })
+          lastConfettiTime = now
+        }
 
         if (Date.now() < end) {
           requestAnimationFrame(frame)
